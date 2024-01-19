@@ -121,3 +121,25 @@ cat("Temizlenmiş veri setindeki NA değerleri sayısı:", sum(is.na(myDF_cleane
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
 myDF
 ```
+# Q5 : Veri mühendisliği 
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+
+library(ggplot2)
+# Histogram oluşturma
+ggplot(myDF, aes(x = BloodPressure, fill = "Blood Pressure")) +
+  geom_histogram(binwidth = 5, position = "identity", alpha = 0.7) +
+  geom_histogram(aes(x = Cholesterol, fill = "Cholesterol"), binwidth = 10, position = "identity", alpha = 0.7) +
+  labs(title = "Blood Pressure and Cholesterol Distribution",
+       x = "Value",
+       y = "Frequency",
+       fill = "Variable") +
+  theme_minimal() +
+  scale_fill_manual(values = c("Blood Pressure" = "blue", "Cholesterol" = "red"))
+```
+```{r echo=FALSE, message=FALSE, warning=FALSE,results='hide'}
+
+
+# Test dosyasını çalıştır ve çıktıları yakala
+source("./Q5_tests_bacakoglu_sehnaz_200401076.R")
+```
