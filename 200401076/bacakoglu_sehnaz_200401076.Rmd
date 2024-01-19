@@ -19,3 +19,38 @@ Bu projenin temel amacı,**"Heart Attack Prediction Dataset"** adlı veri setini
 Üçüncü aşamada, kalp krizi geçiren ve geçirmeyen hasta grupları arasındaki farklar değerlendirilecek. İki grup arasında demografik ve klinik özellikler açısından ortaya çıkan önemli farklılıklar, kalp krizi riskini etkileyebilecek temel faktörleri anlamamıza yardımcı olacaktır. Dördüncü aşamada, hangi demografik veya klinik özelliklerin kalp krizi riskini artırabileceği veya azaltabileceği belirlenecek. Örneğin, belirli bir yaş grubundaki hastaların daha yüksek bir risk altında olup olmadığını değerlendirmek, risk faktörlerini belirlemekte önemli bir adım olacaktır.
 
 Son aşamada, araştırma sonuçları özetlenecek ve yorumlanacak. Elde edilen bulgular, sağlık profesyonellerine, sağlık politika yapıcılarına veya ilgili diğer paydaşlara, kalp krizi riskini daha iyi anlama ve önleme konusunda rehberlik edecek önerilerde bulunmak adına değerli bilgiler sunacaktır. Bu proje, sağlık hizmetlerinin daha etkili ve hedeflenmiş bir şekilde yönetilmesine katkıda bulunarak kalp krizi riskini azaltmaya yönelik önleyici stratejilerin geliştirilmesine katkı sağlayabilir.
+
+# Q3 : Veri seti keşifsel analizi
+
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+
+filename <- "heart_attack_prediction_dataset.csv"
+
+library(readr)
+myDF <- read_csv(filename)
+```
+
+Veri seti Kaggle web sitesinden indirilmiştir ve **readr::read_csv()** fonksiyonu kullanılarak **`r class(myDF)[[1]]`** tipinde bir değişkene ithal edilmiştir. Veri boyutları aşağıdaki gibidir :
+
+- Satir sayisi : `r nrow(myDF)`
+- Satir sayisi : `r ncol(myDF)`
+
+Veri setinin ön görsellemesi aşağıda verilmiştir.
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+
+myDF
+```
+
+Data setimizdeki kalp krizi geçiren kişilerin oranları histogram tablosunda gösterilmiştir.
+**Heart Attack Risk** Histogram Gösterimi 
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+hist(myDF$`Heart Attack Risk`, breaks = 20)
+```
+
+Data setimizdeki yaş verilerinin dağılımı aşağıdaki histogramda gösterilmiştir.
+**Age** Histogram Gösterimi 
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+hist(myDF$`Age`, breaks = 20)
+```
