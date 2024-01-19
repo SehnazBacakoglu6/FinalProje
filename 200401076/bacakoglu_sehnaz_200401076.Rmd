@@ -9,3 +9,13 @@ df_print: paged
 
 Sirketimiz SB Sağlık Teknoloji ve İnovasyon Şirketi  dir.
 SB Sağlık Teknoloji ve İnovasyon Şirketi olarak ; Projemiz , kalp krizi geçirmiş olan hastaların sahip olduğu özellikleri analiz etmek ve bu özelliklerin kalp krizi geçirme riskini belirlemedeki önemini anlamak üzerinedir.
+
+# Q2 : Proje Amacı
+
+Kullandığım veri seti : https://www.kaggle.com/datasets/iamsouravbanerjee/heart-attack-prediction-dataset 
+Bu projenin temel amacı,**"Heart Attack Prediction Dataset"** adlı veri setini kullanarak **kalp krizi geçiren kişileirin hastalıklarını genel olarak etkileyebilecek belirli demografik ve klinik özelliklerini araştırmak ve bu özelliklerin kalp krizi riski üzerindeki potansiyel etkilerini incelemektir.** 
+İlk aşamada, hastaların demografik bilgileri (yaş, cinsiyet vb.) ve klinik özellikleri (kan basıncı, kolesterol düzeyleri vb.) belirlenecek ve bu veriler istatistiksel olarak analiz edilecektir. İkinci aşamada, belirlenen demografik ve klinik özellikler arasındaki ilişkiler incelenecek; örneğin, yaş ile kan basıncı arasındaki ilişki veya cinsiyet ile kolesterol düzeyleri arasındaki farklar belirlenecektir.
+
+Üçüncü aşamada, kalp krizi geçiren ve geçirmeyen hasta grupları arasındaki farklar değerlendirilecek. İki grup arasında demografik ve klinik özellikler açısından ortaya çıkan önemli farklılıklar, kalp krizi riskini etkileyebilecek temel faktörleri anlamamıza yardımcı olacaktır. Dördüncü aşamada, hangi demografik veya klinik özelliklerin kalp krizi riskini artırabileceği veya azaltabileceği belirlenecek. Örneğin, belirli bir yaş grubundaki hastaların daha yüksek bir risk altında olup olmadığını değerlendirmek, risk faktörlerini belirlemekte önemli bir adım olacaktır.
+
+Son aşamada, araştırma sonuçları özetlenecek ve yorumlanacak. Elde edilen bulgular, sağlık profesyonellerine, sağlık politika yapıcılarına veya ilgili diğer paydaşlara, kalp krizi riskini daha iyi anlama ve önleme konusunda rehberlik edecek önerilerde bulunmak adına değerli bilgiler sunacaktır. Bu proje, sağlık hizmetlerinin daha etkili ve hedeflenmiş bir şekilde yönetilmesine katkıda bulunarak kalp krizi riskini azaltmaya yönelik önleyici stratejilerin geliştirilmesine katkı sağlayabilir.
