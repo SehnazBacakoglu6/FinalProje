@@ -216,3 +216,47 @@ ggplot(health_data, aes(x = HeartAttackRisk, y = SleepHours)) +
 # Test dosyasını çalıştır ve çıktıları yakala
 source("./Q6_tests_bacakoglu_sehnaz_200401076.R")
 ```
+
+# Q7:Sonuç değerlendirme, tavsiyeler
+
+
+Bu projede, kalp krizi riski ve diyabet durumu ile ilgili verilerin analizi ve keşifsel veri analizi (EDA) gerçekleştirildi. İşte projenin genel değerlendirmesi ve tavsiyeler:
+
+**Sonuç Değerlendirmesi:**
+
+**Veri Analizi:** Veri setinin keşifsel analizi, temel istatistiklerin ve grafiklerin kullanılmasıyla yapıldı. Yaş, cinsiyet, fiziksel aktivite gibi değişkenlerle kalp krizi riski arasındaki ilişki incelendi.
+Ön İşleme: Veri seti ön işleme aşamalarından geçirildi. Sayısal değerler düzeltilerek, eksik veriler temizlendi ve sütun isimleri uygun hale getirildi.
+
+**Veri Mühendisliği:** İki farklı veri seti oluşturularak birleştirildi. Ayrıca, sentetik bir veri seti oluşturuldu.
+
+**Mantıklılık ve Çözüm Başarısı:**
+
+Analizler, veri setindeki değişkenler arasındaki ilişkileri anlamak adına mantıklı sonuçlar ortaya koydu.
+Kalp krizi riski ve diyabet durumu arasındaki ilişkiyi anlamak adına çapraz tablolar ve grafikler kullanıldı. Bu, projenin ana problemini anlamak ve çözmek açısından başarılı bir yaklaşım oldu.
+
+**Sonuçların Kullanımı:**
+
+Sonuçlar, sağlık profesyonelleri, klinik araştırmacılar ve karar alıcılar için değerli olabilir. Özellikle kalp krizi riskini etkileyen faktörleri anlamak, önleyici tedbirleri planlamak ve hedef grupları belirlemek açısından önemlidir.
+Proje sonuçları, sağlık politikalarının oluşturulması ve bireylerin sağlık alışkanlıklarını değerlendirmek için kullanılabilir.
+
+**Analizin ve Sonuçların Kuvvetli ve Zayıf Yanları:**
+
+
+**Kuvvetli Yanlar:**
+
+Veri seti geniş kapsamlı bir şekilde incelendi.
+İlişkileri anlamak adına çeşitli istatistiksel ve görsel analizler kullanıldı.
+
+**Zayıf Yanlar:**
+
+Daha fazla makine öğrenimi veya derin öğrenme teknikleri kullanılarak daha karmaşık modeller oluşturulmamıştır.
+Veri setindeki sınırlamalara daha fazla vurgu yapılamamıştır.
+
+**Tavsiyeler:**
+
+
+Proje kapsamında daha fazla veri toplanabilir. Örneğin, genetik faktörler, yaşam tarzı alışkanlıkları ve daha spesifik sağlık ölçümleri bu analize dahil edilebilir.
+Makine öğrenimi teknikleri, gelecekteki projelerde daha karmaşık analizler ve tahminler için kullanılabilir.
+Veri seti üzerinde daha fazla ön işleme ve temizleme adımları eklenerek, analizin güvenilirliği artırılabilir.
+Bu proje, temel bir keşifsel analiz ve veri mühendisliği örneği sunmaktadır. Gelecekteki çalışmalar için daha fazla veri ve gelişmiş analiz tekniklerinin kullanılması, daha derinlemesine anlayış sağlayabilir ve sağlık alanında daha etkili çözümlere yol açabilir.
+
