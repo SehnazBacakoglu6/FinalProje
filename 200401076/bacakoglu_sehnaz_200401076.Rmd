@@ -143,3 +143,76 @@ ggplot(myDF, aes(x = BloodPressure, fill = "Blood Pressure")) +
 # Test dosyasını çalıştır ve çıktıları yakala
 source("./Q5_tests_bacakoglu_sehnaz_200401076.R")
 ```
+# Q6 : Veri analizi
+
+**Bu örnekle, iki farklı sütunu birleştirerek çapraz tablo ve grafik oluşturarak iki değişkenin ilişkisini gösteren basit bir analiz gerçekleştirilmiştir.**
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+# İki veri seti oluşturma
+set.seed(123)
+
+# Heart Attack Risk veri seti
+heart_attack_data <- data.frame(
+  PatientID = 1:50,
+  HeartAttackRisk = sample(c("Low", "Medium", "High"), 50, replace = TRUE)
+)
+
+# Diabetes veri seti
+diabetes_data <- data.frame(
+  PatientID = 1:50,
+  Diabetes = sample(c("Yes", "No"), 50, replace = TRUE)
+)
+
+# Veri setlerini birleştirme (PatientID üzerinden birleştirme)
+merged_health_data <- merge(heart_attack_data, diabetes_data, by = "PatientID")
+
+# İki sütunu birleştirilmiş veri seti olarak gösterme (örneğin sadece ilk 5 satır)
+head(merged_health_data)
+
+# Analiz
+# Tabloyu gösterme
+table(merged_health_data$HeartAttackRisk, merged_health_data$Diabetes)
+
+# Stacked bar plot oluşturma
+ggplot(merged_health_data, aes(x = HeartAttackRisk, fill = Diabetes)) +
+  geom_bar(position = "stack") +
+  labs(title = "Heart Attack Risk vs Diabetes",
+       x = "Heart Attack Risk",
+       y = "Count",
+       fill = "Diabetes") +
+  theme_minimal()
+
+```
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+# Örnek veri seti oluşturma
+set.seed(123)
+
+# Heart Attack Risk ve Sleep Hours per Day veri seti
+health_data <- data.frame(
+  PatientID = 1:100,
+  HeartAttackRisk = sample(c("Low", "Medium", "High"), 100, replace = TRUE),
+  SleepHours = rnorm(100, mean = 7, sd = 1)
+)
+
+# Veri setini inceleme (ilk 5 satır)
+head(health_data)
+
+# Heart Attack Risk ve Sleep Hours per Day arasındaki ilişkiyi gösteren bir kutu grafiği çizme
+library(ggplot2)
+
+ggplot(health_data, aes(x = HeartAttackRisk, y = SleepHours)) +
+  geom_boxplot(fill = "skyblue", color = "blue") +
+  labs(title = "Heart Attack Risk vs Sleep Hours",
+       x = "Heart Attack Risk",
+       y = "Sleep Hours per Day") +
+  theme_minimal()
+
+
+
+
+```
+```{r echo=FALSE, message=FALSE, warning=FALSE,results='hide'}
+
+
+# Test dosyasını çalıştır ve çıktıları yakala
+source("./Q6_tests_bacakoglu_sehnaz_200401076.R")
+```
