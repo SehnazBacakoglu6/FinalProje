@@ -54,3 +54,70 @@ Data setimizdeki yaş verilerinin dağılımı aşağıdaki histogramda gösteri
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
 hist(myDF$`Age`, breaks = 20)
 ```
+# Q4:Veri seti ön işlemesi
+
+Bu R kod örneği, veri setinin ön işlemesini gerçekleştiren temel adımları içermektedir. Aşağıda yapılan işlemlerin özeti bulunmaktadır:
+
+Kategori Bilgisi Çevirme:
+
+Veri setindeki "Gender" (Cinsiyet) sütunu factor tipine çevrildi. Bu, kategori bilgisinin daha etkili bir şekilde kullanılabilmesini sağlar.
+Sayısal Değerlerin Düzeltme:
+
+Veri setindeki sayısal değerlerin ondalık durumu düzeltildi. Özellikle, "Cholesterol" ve "BloodPressure" sütunlarındaki virgülle ayrılmış sayılar, R'ın anlayabileceği formata getirildi.
+Eksik Verilerin Uygun Formata Getirme:
+
+Veri setindeki eksik veriler, uygun bir formata dönüştürüldü. Örneğin, "-999" veya "yok" gibi değerler, NA (Not Available) olarak işaretlendi.
+NA Değerlerinin Temizlenmesi:
+
+Çalışılacak olan belirli bir sütundaki NA değerleri temizlendi. Bu, eksik verilerin analiz aşamasında etkisiz hale getirilmesini sağlar.
+Proje İçin Dönüşümler:
+
+Proje bağlamında anlamlı hale getirilmesi amacıyla dönüşümler yapılabileceğine dair örnek bir adım eklendi. Bu, projenin gereksinimlerine bağlı olarak değişebilir.
+Ön İşleme Sonrası Veri Setinin Özeti:
+
+Veri seti ön işleme adımları sonrasında, temizlenmiş veri setinin özeti gösterildi. Bu özet, veri setinin istatistiksel bilgilerini içermektedir.
+NA Değerleri Sayıları:
+
+Ham veri setindeki NA değerleri sayısı ve temizlenmiş veri setindeki NA değerleri sayısı raporda gösterildi.
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+# Q4: Veri seti ön işlemesi
+
+# Kategori bilgisi içeren sütunu factor tipine çevirme
+myDF$Gender <- as.factor(myDF$Sex)
+
+# Sayısal değerlerin ondalık durumunu düzeltme (örneğin, virgül ile belirtilen sayıları düzeltme)
+myDF$Cholesterol <- as.numeric(gsub(",", ".", myDF$Cholesterol))
+myDF$BloodPressure <- as.numeric(gsub(",", ".", myDF$`Blood Pressure`))
+# Diğer sayısal sütunlar için de aynı işlemi uygulayabilirsiniz.
+
+# Eksik verileri uygun formata getirme (örneğin, -999 veya "yok" gibi değerleri NA yapma)
+myDF[myDF == -999] <- NA
+myDF[myDF == "yok"] <- NA
+
+# Çalışılacak sütundaki NA değerlerini temizleme
+myDF <- myDF[complete.cases(myDF$`Physical Activity Days Per Week`), ]
+
+# Proje için anlamlı hale getirmek üzere dönüşümler yapma (örneğin, EUR satış verilerini TRY'ye çevirme)
+# Dönüşüm örnekleri:
+# myDF$SalesTRY <- myDF$SalesEUR * exchange_rate
+
+# Ön işleme sonrası veri setinin özetini gösterme
+summary(myDF)
+
+# Ham veri setindeki NA değerlerin sayısı
+cat("Ham veri setindeki NA değerleri sayısı:", sum(is.na(myDF)), "\n")
+
+# Temizlenmiş veri setindeki NA değerlerin sayısı
+myDF_cleaned <- myDF[complete.cases(myDF), ]
+cat("Temizlenmiş veri setindeki NA değerleri sayısı:", sum(is.na(myDF_cleaned)), "\n")
+
+
+
+```
+
+**Aşağıda temizlenmiş dataset tablosu gösterilmiştir**
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+myDF
+```
