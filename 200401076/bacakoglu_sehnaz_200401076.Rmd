@@ -1,0 +1,11 @@
+---
+title: "Proje Rapor : Şehnaz Bacakoğlu 200401076"
+output:
+html_document:
+df_print: paged
+---
+
+# Q1 : Problem tanımı
+
+Sirketimiz SB Sağlık Teknoloji ve İnovasyon Şirketi  dir.
+SB Sağlık Teknoloji ve İnovasyon Şirketi olarak ; Projemiz , kalp krizi geçirmiş olan hastaların sahip olduğu özellikleri analiz etmek ve bu özelliklerin kalp krizi geçirme riskini belirlemedeki önemini anlamak üzerinedir.
